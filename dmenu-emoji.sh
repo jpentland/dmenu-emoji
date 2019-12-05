@@ -15,8 +15,8 @@ case "$1" in
       command -v notify-send > /dev/null && notify-send -t 200 "$emoji copied!"
     fi
     ;;
-  "")
-    bash $0 list | dmenu -p 'Emoji: ' | bash $0 copy
+  *)
+    bash $0 list | dmenu -p 'Emoji: ' $@ | bash $0 copy
     ;;
 esac
 
