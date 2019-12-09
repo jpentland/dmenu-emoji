@@ -11,7 +11,7 @@ case "$1" in
     input=$(tee)
     if [ ! -z "$input" ]; then
       emoji=${input: -1}
-      echo -n "$emoji" | xclip -selection c
+      echo -n "$emoji" | xclip -selection clipboard
       command -v notify-send > /dev/null && notify-send -t 200 "$emoji copied!"
     fi
     ;;
